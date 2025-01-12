@@ -49,7 +49,12 @@ sys_sbrk(void)
   //   return -1;
   // Instead, we will just increase the process's size without actually growing
   // it now.
-  myproc()->sz += n;
+  if(n < 0) {
+    if(growproc(n) < 0)
+      return -1;
+  } else {
+    myproc()->sz += n;
+  }
   return addr;
 }
 
