@@ -44,6 +44,8 @@ int main(int argc, char **argv)
     p[i] = i;
   }
 
+  printf("The last entry is at address %p\n", &p[size-1]);
+
   // done, free it
   free(p);
 
