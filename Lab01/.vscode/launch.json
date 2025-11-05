@@ -10,7 +10,7 @@
         "request": "launch",
         "cwd": "${workspaceFolder}/build/",
         "program": "${workspaceFolder}/build/bin/fib_debug.run",
-        "MIMode": "lldb",
+        "MIMode": "gdb",
         "setupCommands": [
           {
             "description": "Enable pretty-printing for gdb",
@@ -18,7 +18,6 @@
             "ignoreFailures": true
           }
         ],
-        "launchCompleteCommand": "None",
       }
     ]
 }
