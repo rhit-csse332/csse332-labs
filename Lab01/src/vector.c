@@ -47,15 +47,17 @@ vec_free(struct vector *vec)
   // TODO: Add your code here...
 }
 
-static void
+static unsigned int *
 __vec_realloc(struct vector *vec)
 {
-  vec->cap  = vec->cap * 2;
-  vec->data = realloc(vec->data, vec->cap * sizeof(unsigned int));
+  unsigned int *tmp = vector->data;
+  vec->cap          = vec->cap * 2;
+  vec->data         = realloc(vec->data, vec->cap * sizeof(unsigned int));
   if(!vec->data) {
     perror("realloc:");
     exit(EXIT_FAILURE);
   }
+  return tmp;
 }
 
 /**

@@ -6,6 +6,7 @@
  * soon as possible.
  *
  ***********************************************************************************/
+#include "cgassert.h"
 #include "cgrade.h"
 #include "cgradescropify.h"
 #include "vector.h"
@@ -78,6 +79,12 @@ test_vec_push_back_realloc(void)
   CG_ASSERT_INT_EQ(8, vec->cap);
   CG_ASSERT_INT_EQ(5, vec->len);
   CG_ASSERT_INT_EQ(5, vec->data[4]);
+
+  for(i = 0; i < VEC_DEF_CAP; i++) {
+    CG_ASSERT_INT_EQ_MSG(
+        i, vec->data[i],
+        "Checking if data is maintained after expansion, iteration %d.", i);
+  }
 
   vec_free(vec);
   vec = 0;
