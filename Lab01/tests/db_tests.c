@@ -195,7 +195,7 @@ struct cg_test_suite *
 db_test_suite(void)
 {
   struct cg_test_suite *ts =
-      cg_test_suite_new("Problem 3: Object Oriented Linked List Test Suite", 0);
+      cg_test_suite_new("Problem 3: Malleable Linked List Test Suite", 0);
 
   CG_SUITE_CREATE_GRADED_TEST(ts, "test_node_mknode", test_node_mknode, 0,
                               "Check if the node is initialized correctly.");
@@ -218,9 +218,8 @@ db_test_suite(void)
 int
 main(int argc, char **argv)
 {
-  int rc = 0;
-  struct cg_project *proj =
-      cg_project_new("Problem 3: Object Oriented Linked List");
+  int rc                  = 0;
+  struct cg_project *proj = cg_project_new("Problem 3: Malleable Linked List");
   cg_project_add_suite(proj, db_test_suite());
 
   cg_project_runall(proj);

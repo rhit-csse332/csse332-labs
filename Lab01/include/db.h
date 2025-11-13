@@ -10,7 +10,7 @@
 #define _DB_H
 
 /**
- * An "object oriented" node abstraction.
+ * An malleable node abstraction.
  *
  * This data structure approach is based on the list_node approach found in the
  * Linux kernel.
