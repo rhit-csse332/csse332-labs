@@ -143,4 +143,5 @@ int
 searching_seek_and_destroy(struct db *db, unsigned long value)
 {
   // TODO: Add your code here....
+  return -1;
 }

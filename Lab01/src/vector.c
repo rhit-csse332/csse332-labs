@@ -50,7 +50,7 @@ vec_free(struct vector *vec)
 static unsigned int *
 __vec_realloc(struct vector *vec)
 {
-  unsigned int *tmp = vector->data;
+  unsigned int *tmp = vec->data;
   vec->cap          = vec->cap * 2;
   vec->data         = realloc(vec->data, vec->cap * sizeof(unsigned int));
   if(!vec->data) {
@@ -80,6 +80,7 @@ vec_pop_back(struct vector *vec)
   }
 
   // TODO: Add your code here....
+  return 0;
 }
 
 /**
@@ -93,6 +94,7 @@ vec_elem_at(struct vector *vec, unsigned int i)
   }
 
   // TODO: Add your code here...
+  return 0;
 }
 
 /**
@@ -106,4 +108,5 @@ vec_set_at(struct vector *vec, unsigned int i, unsigned int elem)
   }
 
   // TODO: Add your code here...
+  return 0;
 }

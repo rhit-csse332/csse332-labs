@@ -36,9 +36,3 @@ add_debug_executable(db)
 add_test_executable(ilist)
 add_debug_executable(ilist)
 
-# Homework Problem: mem
-add_test_executable(mem)
-add_debug_executable(mem)
-
-# TODO: Move to activities.
-add_executable(array_tests.run array_tests.c)
