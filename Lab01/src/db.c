@@ -120,7 +120,7 @@ join_str_db(struct db *db)
 
   for(n = db->head.next; n != &db->head; n = n->next) {
     s = node_to_dbstr(n);
-    len += strlen(s->str);
+    len += strlen(s->str) + 1;
   }
 
   r = malloc(len + 1);
@@ -143,5 +143,4 @@ int
 searching_seek_and_destroy(struct db *db, unsigned long value)
 {
   // TODO: Add your code here....
-  return -1;
 }

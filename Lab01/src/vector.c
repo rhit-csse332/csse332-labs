@@ -11,6 +11,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <vector.h>
 
@@ -47,17 +48,15 @@ vec_free(struct vector *vec)
   // TODO: Add your code here...
 }
 
-static unsigned int *
+static void
 __vec_realloc(struct vector *vec)
 {
-  unsigned int *tmp = vec->data;
-  vec->cap          = vec->cap * 2;
-  vec->data         = realloc(vec->data, vec->cap * sizeof(unsigned int));
+  vec->cap  = vec->cap * 2;
+  vec->data = realloc(vec->data, vec->cap * sizeof(unsigned int));
   if(!vec->data) {
     perror("realloc:");
     exit(EXIT_FAILURE);
   }
-  return tmp;
 }
 
 /**
@@ -67,6 +66,9 @@ void
 vec_push_back(struct vector *vec, unsigned int elem)
 {
   // TODO: Add your code here...
+  //  Please remove this line, it is used to silence compiler errors before
+  //  starting.
+  (void)__vec_realloc(0);
 }
 
 /**
@@ -84,7 +86,7 @@ vec_pop_back(struct vector *vec)
 }
 
 /**
- * Implementation of the vec_elem_at function..
+ * Implementation of the vec_elem_at function.
  */
 unsigned int
 vec_elem_at(struct vector *vec, unsigned int i)
@@ -98,7 +100,7 @@ vec_elem_at(struct vector *vec, unsigned int i)
 }
 
 /**
- * Implementation of the vec_set_at function..
+ * Implementation of the vec_set_at function.
  */
 int
 vec_set_at(struct vector *vec, unsigned int i, unsigned int elem)
@@ -108,5 +110,5 @@ vec_set_at(struct vector *vec, unsigned int i, unsigned int elem)
   }
 
   // TODO: Add your code here...
-  return 0;
+  return -1;
 }
