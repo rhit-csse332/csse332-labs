@@ -577,7 +577,7 @@ test_exec_code_1rf(void)
   int npages;
   const char *target = "1.rf";
 
-  rc = rf_exec(target, &exst);
+  rc = rf_exec_code_only(target, &exst);
   CG_ASSERT_INT_EQ_MSG(
       0, rc, "Executing the process from %s failed with error code %d", target,
       rc);
@@ -614,7 +614,7 @@ test_exec_code_2rf(void)
   int npages;
   const char *target = "2.rf";
 
-  rc = rf_exec(target, &exst);
+  rc = rf_exec_code_only(target, &exst);
   CG_ASSERT_INT_EQ_MSG(
       0, rc, "Executing the process from %s failed with error code %d", target,
       rc);
@@ -651,7 +651,7 @@ test_exec_code_7rf(void)
   int npages;
   const char *target = "7.rf";
 
-  rc = rf_exec(target, &exst);
+  rc = rf_exec_code_only(target, &exst);
   CG_ASSERT_INT_EQ_MSG(
       0, rc, "Executing the process from %s failed with error code %d", target,
       rc);
