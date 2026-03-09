@@ -16,7 +16,7 @@ main(int argc, char **argv)
 {
   // Add any code you'd like to test out independently here. It will be
   // compiled and built into %_debug.run that you can load into gdb.
-  printf("Fib(1) = %lu\n", fib(1));
+  printf("Fib(5) = %lu\n", fib(5));
 
   return EXIT_SUCCESS;
 }
