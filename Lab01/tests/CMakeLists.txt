@@ -19,6 +19,7 @@ endmacro(add_debug_executable)
 
 # Problem 0: build tools
 add_test_executable(hello)
+add_debug_executable(hello)
 
 # Problem 1: Fibonnaci bug
 add_test_executable(fib)
