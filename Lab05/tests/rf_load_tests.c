@@ -736,70 +736,70 @@ rf_load_test_suite(void)
 
   // calc_npages: 10 points
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_calc_npages", test_calc_npages, 10,
+      ts, "test_calc_npages", test_calc_npages, 5,
       "Calculate the number of pages needed for each binary");
 
   // Basic load code tests
   CG_SUITE_CREATE_GRADED_TEST(ts, "test_load_code_exists",
-                              test_load_code_exists, 4,
+                              test_load_code_exists, 2,
                               "Test that loaded code exists in memory map");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_code_perm", test_load_code_perm, 8,
+      ts, "test_load_code_perm", test_load_code_perm, 4,
       "Test that loaded code region has the right permissions");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_code_len", test_load_code_len, 4,
+      ts, "test_load_code_len", test_load_code_len, 2,
       "Test that loaded code region has the correct length");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_code_npages", test_load_code_npages, 8,
+      ts, "test_load_code_npages", test_load_code_npages, 4,
       "Test that loaded code regions fits within the required number of pages");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_code_hint", test_load_code_hint, 4,
+      ts, "test_load_code_hint", test_load_code_hint, 2,
       "Test that loading the code region is consistent when given a hint");
 
   // Test loading code for all examples
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_code_all", test_load_code_all, 10,
+      ts, "test_load_code_all", test_load_code_all, 5,
       "Test that loading code works for all of the examples we have.");
 
   // Test exec for code-only examples
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_exec_code_1rf", test_exec_code_1rf, 5,
+      ts, "test_exec_code_1rf", test_exec_code_1rf, 2,
       "Test that executing code-only example (1.rf) works correctly");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_exec_code_2rf", test_exec_code_2rf, 5,
+      ts, "test_exec_code_2rf", test_exec_code_2rf, 2,
       "Test that executing code-only example (2.rf) works correctly");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_exec_code_7rf", test_exec_code_7rf, 5,
+      ts, "test_exec_code_7rf", test_exec_code_7rf, 3,
       "Test that executing code-only example (7.rf) works correctly");
 
   // Basic loading of data region
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_no_data", test_load_no_data, 5,
+      ts, "test_load_no_data", test_load_no_data, 3,
       "Test that programs with no data get nothing loaded");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_data_exists", test_load_data_exists, 4,
+      ts, "test_load_data_exists", test_load_data_exists, 2,
       "Test that loaded data region exists in memory map");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_data_perm", test_load_data_perm, 8,
+      ts, "test_load_data_perm", test_load_data_perm, 4,
       "Test that loaded data region has the right permissions");
   CG_SUITE_CREATE_GRADED_TEST(ts, "test_load_data_location",
-                              test_load_data_location, 8,
+                              test_load_data_location, 4,
                               "Test that loaded data is at the right offset");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_data_values", test_load_data_values, 4,
+      ts, "test_load_data_values", test_load_data_values, 2,
       "Test that loaded data region contains the right variable");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_data_len", test_load_data_len, 4,
+      ts, "test_load_data_len", test_load_data_len, 2,
       "Test that loaded data region is of correct length");
 
   // Test loading data for all examples
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_load_data_all", test_load_data_all, 24,
+      ts, "test_load_data_all", test_load_data_all, 12,
       "Test that loading data works for all the examples we have");
 
   // Test exec that integrates everything.
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_exec", test_exec, 30,
+      ts, "test_exec", test_exec, 15,
       "Integration tests using rf_exec to make sure code executes correctly");
 
   return ts;

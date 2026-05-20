@@ -218,37 +218,37 @@ rf_load_test_suite(void)
     exit(EXIT_FAILURE);
 
   // test_make_proc, 5 points
-  CG_SUITE_CREATE_GRADED_TEST(ts, "test_make_proc", test_make_proc, 5,
+  CG_SUITE_CREATE_GRADED_TEST(ts, "test_make_proc", test_make_proc, 2,
                               "Check that make_proc behaves correctly");
 
   // test_load_proc, 10 points
-  CG_SUITE_CREATE_GRADED_TEST(ts, "test_load_proc", test_load_proc, 10,
+  CG_SUITE_CREATE_GRADED_TEST(ts, "test_load_proc", test_load_proc, 2,
                               "Check that load_proc can run a proces");
-  CG_SUITE_CREATE_GRADED_TEST(ts, "test_load_proc_glbl", test_load_proc_glbl,
-                              10, "Check that load_proc gets globals right.");
+  CG_SUITE_CREATE_GRADED_TEST(ts, "test_load_proc_glbl", test_load_proc_glbl, 2,
+                              "Check that load_proc gets globals right.");
 
   // test_proc_wrapper
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_proc_wrapper", test_proc_wrapper, 10,
+      ts, "test_proc_wrapper", test_proc_wrapper, 3,
       "Check the proc_wrapper can run a process in the same Scheduler");
 
   // test_add_proc
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_proc_add", test_proc_add, 15,
+      ts, "test_proc_add", test_proc_add, 2,
       "Check that we can add a process correctly using add_process");
   CG_SUITE_CREATE_GRADED_TEST(
-      ts, "test_add_process_invalid", test_add_process_invalid, 10,
+      ts, "test_add_process_invalid", test_add_process_invalid, 1,
       "Check that adding an invalid process returns a NULL pointer");
 
   // test_sched
-  CG_SUITE_CREATE_GRADED_TEST(ts, "test_sched_one_proc", test_sched_one_proc,
-                              10, "Check that we can run a single process");
+  CG_SUITE_CREATE_GRADED_TEST(ts, "test_sched_one_proc", test_sched_one_proc, 4,
+                              "Check that we can run a single process");
   CG_SUITE_CREATE_GRADED_TEST(ts, "test_sched_another_proc",
-                              test_sched_another_proc, 10,
+                              test_sched_another_proc, 4,
                               "Check that we can another process");
   CG_SUITE_CREATE_GRADED_TEST(
       ts, "test_multiple_procs_run_and_complete",
-      test_multiple_procs_run_and_complete, 20,
+      test_multiple_procs_run_and_complete, 5,
       "Check that we can run multiple processes correctly");
 
   return ts;
